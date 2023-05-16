@@ -1,0 +1,71 @@
+.nav-bar {
+  background-color: yellow;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "nav nav action"
+    "search search search";
+  align-items: center;
+  min-height: 65px;
+}
+.brand_name {
+  margin: 0;
+  padding: 0 0px;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  text-align: start;
+  padding: 0 10%;
+  font-weight: 800;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+.logo_name {
+  grid-area: nav;
+}
+.input-search-section {
+  grid-area: search;
+  display: flex;
+}
+.input-search {
+  padding: 1px 8px;
+  margin: 2px 24px;
+  border-radius: 3px;
+  background-color: white;
+  height: 3vh;
+  flex-grow: 1;
+  border: 1px solid black;
+}
+.nav-actions-list {
+  grid-area: action;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-actions-list .cart,
+.wishlist,
+.user {
+  scale: 1;
+}
+.nav-actions-list .cart:hover,
+.wishlist:hover,
+.user:hover {
+  scale: 1.5;
+  color: green;
+}
+@media (min-width: 768px) {
+  .nav-bar {
+    background-color: orange;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: "nav search action";
+    align-items: center;
+    min-height: 65px;
+  }
+  .input-search {
+    width: 90%;
+  }
+}

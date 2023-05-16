@@ -1,0 +1,21 @@
+.products-list {
+  display: grid;
+  grid-template-columns: 250px auto auto auto;
+  grid-template-areas: "sidebar cards cards cards cards";
+}
+
+.side-bar {
+  grid-area: sidebar;
+  height: 100%;
+  width: 250px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: cards;
+  border: 1px solid red;
+}
+.cards h1 {
+  border: 1px solid red;
+}
