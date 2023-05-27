@@ -8,7 +8,6 @@ export const ProductsProvider = ({ children }) => {
     try {
       const res = await fetch("/api/products");
       const data = await res.json();
-      console.log(data?.products);
       setProductData(data?.products);
     } catch (e) {
       console.log(e);

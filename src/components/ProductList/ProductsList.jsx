@@ -4,25 +4,19 @@ import Sidebar from "../Sidebar/Sidebar";
 import { useProducts } from "../../contexts/productsContext";
 import Product from "../Product/Product";
 import { Link } from "react-router-dom";
+import { useFilters } from "../../contexts/filtersContext";
 
 const ProductsList = () => {
-  console.log("productsList");
   const { productsData } = useProducts();
+  const { finalFilterData } = useFilters();
   return (
     <div className="products-list">
       <div className="side-bar">
         <Sidebar />
       </div>
       <div className="cards">
-        {productsData.map((product) => {
-          return (
-            <Link
-              className="restaurant-cards"
-              to={"/product/" + product.id}
-              key={product.id}>
-              <Product {...product} />
-            </Link>
-          );
+        {finalFilterData.map((product) => {
+          return <Product key={product._id} data={product} />;
         })}
       </div>
     </div>

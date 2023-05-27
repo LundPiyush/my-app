@@ -5,16 +5,23 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import { ProductsProvider } from "./contexts/productsContext";
+import { CartProvider } from "./contexts/cartContext";
+import { AuthProvider } from "./contexts/authContext";
+import { FilterProvider } from "./contexts/filtersContext";
 // Call make Server
 makeServer();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ProductsProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ProductsProvider>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <AuthProvider>
+      <ProductsProvider>
+        <CartProvider>
+          <FilterProvider>
+            <App />
+          </FilterProvider>
+        </CartProvider>
+      </ProductsProvider>
+    </AuthProvider>
+  </BrowserRouter>,
   document.getElementById("root")
 );

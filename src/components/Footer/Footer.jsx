@@ -1,7 +1,58 @@
 import React from "react";
-
+import "./Footer.css";
+import { NavLink } from "react-bootstrap";
+import LanguageIcon from "@mui/icons-material/Language";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <div className="footer">
+      <div className="social-icons">
+        <h2>Connect with me</h2>
+        <div className="connect-links">
+          <NavLink className="nav-link" target="_blank">
+            <LanguageIcon />
+          </NavLink>
+          <NavLink className="nav-link" target="_blank">
+            <GitHubIcon />
+          </NavLink>
+          <NavLink className="nav-link" target="_blank">
+            <TwitterIcon />
+          </NavLink>
+          <NavLink className="nav-link" target="_blank">
+            <LinkedInIcon />
+          </NavLink>
+        </div>
+      </div>
+      <div className="info">
+        <h2>Electronic Store</h2>
+        <p>
+          Stay in touch with us, get product updates, offers, discounts directly
+          to your inbox
+        </p>
+        <h3>© 2023 Electronic Store</h3>
+      </div>
+      <div className="useful-links">
+        <h2>Useful Links</h2>
+        <NavLink className="nav-link" to="/sign-up">
+          Sign-Up
+        </NavLink>
+        <NavLink className="nav-link" to="/cart">
+          Cart
+        </NavLink>
+        <NavLink className="nav-link" to="/">
+          Home
+        </NavLink>
+        <NavLink className="nav-link" to="/products">
+          Store
+        </NavLink>
+        <NavLink className="nav-link" to="/wishlist">
+          Wishlist
+        </NavLink>
+      </div>
+    </div>
+  );
 };
 
 export default Footer;

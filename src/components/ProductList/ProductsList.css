@@ -19,3 +19,7 @@
 .cards h1 {
   border: 1px solid red;
 }
+.restaurant-cards {
+  text-decoration: none;
+  color: black;
+}

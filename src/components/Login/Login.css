@@ -1,0 +1,40 @@
+.form {
+  margin: 4rem auto;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 3rem;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid;
+}
+.label {
+  margin: 1rem;
+  align-self: flex-start;
+}
+.login-input {
+  margin-bottom: 1rem;
+  height: 4vh;
+  width: 90%;
+  padding-left: 10px;
+}
+.btn {
+  color: white;
+  background-color: #1877f2;
+  padding: 0.8rem 2rem;
+  font-size: 16px;
+  margin: 1rem auto;
+  border: none;
+  width: 90%;
+  border-radius: 5px;
+}
+.link {
+  color: #1877f2;
+}
+
+.btn:hover,
+.link:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

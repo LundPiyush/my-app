@@ -5,6 +5,15 @@
   margin: 0rem 1rem;
   margin-right: 1rem;
 }
+.clear-filter {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  justify-content: flex-start;
+}
+.clear-filter .btn-clear {
+  margin: 0rem 3rem;
+}
 .filter-section {
   display: flex;
   flex-direction: column;
@@ -25,6 +34,7 @@
   font-weight: 400;
   color: darkslategray;
 }
+
 input[type="radio"]:checked,
 input[type="radio"]:hover,
 input[type="checkbox"]:checked,

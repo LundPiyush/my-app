@@ -18,6 +18,7 @@ export const signupHandler = function (schema, request) {
   try {
     // check if email already exists
     const foundUser = schema.users.findBy({ email });
+    console.log(foundUser);
     if (foundUser) {
       return new Response(
         422,

@@ -1,0 +1,32 @@
+.footer {
+  background: red;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  padding: 1rem;
+  grid-template-columns: repeat(1, fr);
+  grid-template-areas: "social-icons info useful-links";
+}
+.useful-links {
+  display: flex;
+  flex-direction: column;
+}
+.useful-links a {
+  margin: 0.5rem;
+}
+.social-icons {
+  grid-area: social-icons;
+}
+
+.info {
+  grid-area: info;
+}
+
+.useful-links {
+  grid-area: useful-links;
+}
+
+.nav-link {
+  color: black;
+  padding: 0rem 1rem;
+}
