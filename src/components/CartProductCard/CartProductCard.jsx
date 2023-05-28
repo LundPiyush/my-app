@@ -22,7 +22,7 @@ const CartProductCard = (product) => {
       <img src={src} alt={name} />
       <div className="card-product-details">
         <h4 className="card-product-name">{name}</h4>
-        <p>{category.toUpperCase()}</p>
+        <p>Category: {category.toUpperCase()}</p>
         <div className="cart-price-details">
           <p>
             <s style={{ color: "red" }}>₹{price}</s>
@@ -43,13 +43,9 @@ const CartProductCard = (product) => {
             +
           </button>
         </div>
-        <div>
-          <button
-            className="cart-remove-btn"
-            onClick={() => removeCartData(_id)}>
-            Remove from Cart
-          </button>
-        </div>
+        <button className="cart-remove-btn" onClick={() => removeCartData(_id)}>
+          Remove from Cart
+        </button>
       </div>
     </div>
   );

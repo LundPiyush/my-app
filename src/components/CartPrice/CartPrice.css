@@ -1,0 +1,25 @@
+.cart-price-line {
+  width: 95%;
+  margin: 0rem 0.5rem;
+}
+.cart-block-total,
+.cart-block-final-price {
+  display: flex;
+  flex-direction: column;
+}
+.cart-block-total-price,
+.cart-block-total-discount,
+.cart-block-subtotal-price {
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 0.5rem;
+}
+.cart-checkout-btn {
+  width: 90%;
+  padding: 0.5rem 0rem;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+.cart-total-price-section {
+  padding: 1rem 0rem;
+}

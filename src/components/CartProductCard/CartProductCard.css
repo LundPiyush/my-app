@@ -1,8 +1,7 @@
 .card-product {
   display: flex;
-  border: 3px solid blue;
   margin: 1rem;
-  max-width: 55%;
+  max-width: 100%;
   padding: 1rem;
   background-color: lightgray;
 }
@@ -39,6 +38,7 @@
   height: 50%;
 }
 .cart-remove-btn {
-  height: 2rem;
-  width: 13rem;
+  height: 2.5rem;
+  width: 80%;
+  border-radius: 5px;
 }

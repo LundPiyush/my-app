@@ -19,10 +19,8 @@ const Product = ({ data }) => {
         <h3 className="card-title">{name}</h3>
         <h5 className="card-brand">{category.toUpperCase()}</h5>
         <div className="card-rating">
-          <s className="card-original-price">
-            ₹{price - (price * discount) / 100}
-          </s>
-          <span className="card-price">{price}</span>
+          <s className="card-original-price">₹{price}</s>
+          <span className="card-price">{price - (price * discount) / 100}</span>
         </div>
         <div>
           <span>{rating} ⭐</span> | <span>{}</span>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useCart } from "../../contexts/cartContext";
 import CartProductCard from "../../components/CartProductCard/CartProductCard";
+import CartPrice from "../../components/CartPrice/CartPrice";
 import "./Cart.css";
 
 const Cart = () => {
@@ -17,7 +18,11 @@ const Cart = () => {
             ))}
           </ul>
         </div>
-        <div className="cart-price"></div>
+        <div className="cart-price">
+          <div className="total-cart-price">
+            <CartPrice />
+          </div>
+        </div>
       </div>
     </div>
   );

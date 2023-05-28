@@ -7,6 +7,18 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const token = localStorage.getItem("token");
   console.log("token", token);
+  const priceDetails = cart.reduce(
+    (acc, curr) => ({
+      quantity: acc.quantity + Number(curr.qty),
+      totalPrice: acc.totalPrice + Number(curr.price) * Number(curr.qty),
+      totalSubTotal:
+        acc.totalSubTotal +
+        (Number(curr.price) -
+          (Number(curr.price) * Number(curr.discount)) / 100) *
+          Number(curr.qty),
+    }),
+    { quantity: 0, totalPrice: 0, totalSubTotal: 0 }
+  );
 
   const getCartData = async () => {
     try {
@@ -78,7 +90,13 @@ export const CartProvider = ({ children }) => {
   }, []);
   return (
     <CartContext.Provider
-      value={{ cart, addCartData, changeCartQuantity, removeCartData }}>
+      value={{
+        cart,
+        addCartData,
+        changeCartQuantity,
+        removeCartData,
+        priceDetails,
+      }}>
       {children}
     </CartContext.Provider>
   );
