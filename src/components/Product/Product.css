@@ -3,17 +3,18 @@
   height: 500px;
   padding: 1em;
   border: 1px solid oldlace;
-  margin: 2em 2em;
+  margin: 1em 1em;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .card:hover {
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
 .card > img {
-  object-fit: cover;
-  width: 100%;
+  max-width: 100%;
+  object-fit: contain;
   padding-bottom: 1em;
 }
 .card h5 {
@@ -54,4 +55,10 @@
 .card-rating .card-original-price {
   color: red;
   padding-right: 1rem;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 5px;
+  right: 8px;
 }

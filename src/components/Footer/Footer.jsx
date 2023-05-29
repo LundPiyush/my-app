@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { NavLink } from "react-bootstrap";
+import { NavLink, Link } from "react-router-dom";
 import LanguageIcon from "@mui/icons-material/Language";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -35,21 +35,21 @@ const Footer = () => {
       </div>
       <div className="useful-links">
         <h2>Useful Links</h2>
-        <NavLink className="nav-link" to="/sign-up">
+        <Link className="nav-link" to="/sign-up">
           Sign-Up
-        </NavLink>
+        </Link>
         <NavLink className="nav-link" to="/cart">
           Cart
         </NavLink>
-        <NavLink className="nav-link" to="/">
+        <Link className="nav-link" to="/">
           Home
-        </NavLink>
-        <NavLink className="nav-link" to="/products">
+        </Link>
+        <Link className="nav-link" to="/products">
           Store
-        </NavLink>
-        <NavLink className="nav-link" to="/wishlist">
+        </Link>
+        <Link className="nav-link" to="/wishlist">
           Wishlist
-        </NavLink>
+        </Link>
       </div>
     </div>
   );
