@@ -1,13 +1,12 @@
 import React from "react";
 import "./ProductsList.css";
 import Sidebar from "../Sidebar/Sidebar";
-import { useProducts } from "../../contexts/productsContext";
+//import { useProducts } from "../../contexts/productsContext";
 import Product from "../Product/Product";
-import { Link } from "react-router-dom";
 import { useFilters } from "../../contexts/filtersContext";
 
 const ProductsList = () => {
-  const { productsData } = useProducts();
+  //const { productsData } = useProducts();
   const { finalFilterData } = useFilters();
   return (
     <div className="products-list">

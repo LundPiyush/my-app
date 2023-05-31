@@ -3,19 +3,7 @@ import "./CartProductCard.css";
 import { useCart } from "../../contexts/cartContext";
 
 const CartProductCard = (product) => {
-  const {
-    _id,
-    name,
-    category,
-    createdAt,
-    discount,
-    outOfStock,
-    price,
-    qty,
-    rating,
-    src,
-    updatedAt,
-  } = product;
+  const { _id, name, category, discount, price, qty, src } = product;
   const { changeCartQuantity, removeCartData } = useCart();
   return (
     <div className="card-product">
