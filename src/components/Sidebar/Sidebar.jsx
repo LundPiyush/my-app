@@ -11,7 +11,6 @@ const Sidebar = () => {
     handleCategoryFilter,
     handleDiscount,
     clearFilters,
-    productsData,
     handleSlider,
   } = useFilters();
 
@@ -164,7 +163,7 @@ const Sidebar = () => {
             name="categoryFilter"
             value="accessories"
             checked={filters.checkBox_category.includes("accessories")}
-            onChange={(e) => handleCategoryFilter(e)}
+            onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
           <label>Accessories</label>
         </div>
@@ -174,7 +173,7 @@ const Sidebar = () => {
             name="categoryFilter"
             value="books"
             checked={filters.checkBox_category.includes("books")}
-            onChange={(e) => handleCategoryFilter(e)}
+            onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
           <label>Books</label>
         </div>
@@ -184,7 +183,7 @@ const Sidebar = () => {
             name="categoryFilter"
             value="lifestyle"
             checked={filters.checkBox_category.includes("lifestyle")}
-            onChange={(e) => handleCategoryFilter(e)}
+            onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
           <label>Lifestyle</label>
         </div>
@@ -194,7 +193,7 @@ const Sidebar = () => {
             name="categoryFilter"
             value="clothing"
             checked={filters.checkBox_category.includes("clothing")}
-            onChange={(e) => handleCategoryFilter(e)}
+            onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
           <label>Clothing</label>
         </div>
@@ -204,7 +203,7 @@ const Sidebar = () => {
             name="categoryFilter"
             value="stationery"
             checked={filters.checkBox_category.includes("stationery")}
-            onChange={(e) => handleCategoryFilter(e)}
+            onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
           <label>Stationery</label>
         </div>
@@ -214,7 +213,7 @@ const Sidebar = () => {
             name="categoryFilter"
             value="wallart"
             checked={filters.checkBox_category.includes("wallart")}
-            onChange={(e) => handleCategoryFilter(e)}
+            onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
           <label>Wall Art</label>
         </div>

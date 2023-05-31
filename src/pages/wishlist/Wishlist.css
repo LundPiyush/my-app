@@ -1,0 +1,28 @@
+.wishlist-section h1 {
+  text-align: center;
+}
+.wishlist-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.no-items-in-wishlist {
+  margin: 0rem auto;
+  text-align: center;
+}
+.no-items-in-wishlist button {
+  background-color: #1a73e8;
+  padding: 0rem 1rem;
+  color: white;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.no-items-in-wishlist button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}

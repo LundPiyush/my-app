@@ -5,36 +5,47 @@ import { isItemInCart } from "../../utils/isItemInCart";
 import { isItemInWishlist } from "../../utils/isItemInWishlist";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../contexts/cartContext";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useWishlist } from "../../contexts/wishlistContext";
 
 const Product = ({ data }) => {
   const { authState } = useAuth();
-  const { wishlist, addWishlistData } = useWishlist();
+  const { wishlist, addWishlistData, removeWishlistData } = useWishlist();
   const { _id, name, price, category, rating, discount, src, outOfStock } =
     data;
   const { cart, addCartData } = useCart();
   const navigate = useNavigate();
 
   const addToWishLisButtontHandler = (product) => {
+    console.log("wishlist product", product);
     if (authState.isLoggedIn && authState.token) {
       addWishlistData(product);
       //toast.success("Added to wishlist");
+    } else {
+      navigate("../login");
+      //toast.warning("Please login before adding to wishlist");
     }
   };
   return (
     <div className="card">
+      <div className="wishlist-icon">
+        {isItemInWishlist(wishlist, _id) ? (
+          <FavoriteIcon
+            className="wishlist-icon-card"
+            onClick={() => {
+              removeWishlistData(_id);
+            }}
+          />
+        ) : (
+          <FavoriteBorderOutlinedIcon
+            className="wishlist-icon-card"
+            onClick={(e) => addToWishLisButtontHandler(data)}
+          />
+        )}
+      </div>
       <div onClick={() => navigate(`/product/${_id}`)}>
         <img src={src} alt={name} height={240} width={240} />
-        <div className="wishlist-icon">
-          {isItemInWishlist(wishlist, _id) ? (
-            <FavoriteIcon
-              onClick={() => addToWishLisButtontHandler(data, _id)}
-            />
-          ) : (
-            <FavoriteIcon onClick={() => {}} />
-          )}
-        </div>
         <h3 className="card-title">{name}</h3>
         <h5 className="card-brand">{category.toUpperCase()}</h5>
         <div className="card-rating">

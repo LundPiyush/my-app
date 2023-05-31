@@ -29,18 +29,25 @@ export const FilterProvider = ({ children }) => {
   const handleOutOfStock = (e) => {
     setFilters({ ...filters, includeOutOfStock: e.target.checked });
   };
-  const handleCategoryFilter = (event) => {
-    event.target.checked
-      ? setFilters({
-          ...filters,
-          checkBox_category: [...filters.checkBox_category, event.target.value],
-        })
-      : setFilters({
-          ...filters,
-          checkBox_category: filters.checkBox_category.filter(
-            (item) => item !== event.target.value
-          ),
-        });
+  const handleCategoryFilter = (event, value) => {
+    if (event.target.checked === undefined) {
+      setFilters({
+        ...filters,
+        checkBox_category: [...filters.checkBox_category, value],
+      });
+    } else {
+      event.target.checked
+        ? setFilters({
+            ...filters,
+            checkBox_category: [...filters.checkBox_category, value],
+          })
+        : setFilters({
+            ...filters,
+            checkBox_category: filters.checkBox_category.filter(
+              (item) => item !== value
+            ),
+          });
+    }
   };
   const handleDiscount = (discountValue) => {
     setFilters({ ...filters, radio_discount: Number(discountValue) });
@@ -48,7 +55,7 @@ export const FilterProvider = ({ children }) => {
   const handleSlider = (event) => {
     setFilters({ ...filters, price_in_range: Number(event.target.value) });
   };
-  console.log(filters);
+
   const clearFilters = () => {
     setFilters({
       checkBox_category: [],
@@ -111,7 +118,7 @@ export const FilterProvider = ({ children }) => {
           (product) => product.price <= Number(filters.price_in_range)
         )
       : sortedFilterData;
-  console.log(finalFilterData);
+  console.log(filters);
   return (
     <>
       <FilterContext.Provider

@@ -3,7 +3,6 @@ import { useCart } from "../../contexts/cartContext";
 import "./CartPrice.css";
 const CartPrice = () => {
   const { cart } = useCart();
-  console.log(cart);
   const { priceDetails } = useCart();
   if (cart.length < 1) {
     return null;

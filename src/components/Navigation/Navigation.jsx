@@ -7,12 +7,14 @@ import "./Navigation.css";
 import { useAuth } from "../../contexts/authContext";
 import { useFilters } from "../../contexts/filtersContext";
 import { useCart } from "../../contexts/cartContext";
+import { useWishlist } from "../../contexts/wishlistContext";
 
 const Navigation = () => {
   const navigate = useNavigate();
   const { userLogout, authState } = useAuth();
   const { handleSearchText } = useFilters();
   const { cart } = useCart();
+  const { wishlist } = useWishlist();
 
   const handleLogoutClick = () => {
     navigate("/");
@@ -30,7 +32,7 @@ const Navigation = () => {
           <ShoppingCartIcon style={{ width: 40, height: 40 }} />
         </NavLink>
         <NavLink className="nav-link wishlist" to="/wishlist">
-          <p>0</p>
+          <p>{wishlist.length}</p>
           <FavoriteIcon style={{ width: 40, height: 40 }} />
         </NavLink>
         <NavLink className="nav-link cart" to="/cart">
