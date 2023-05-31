@@ -85,9 +85,13 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    getCartData();
-  }, []);
+  useEffect(
+    () => {
+      getCartData();
+    },
+    // eslint-disable-next-line
+    []
+  );
   return (
     <CartContext.Provider
       value={{
