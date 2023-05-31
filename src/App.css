@@ -1,3 +1,16 @@
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --original-price-color: red;
+  --discounted-price-color: green;
+  --book-card-background-color: black;
+  --star-color: yellow;
+  --card-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  --product-card-box-shadow: rgba(22, 13, 13, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  --modal-background-color: rgba(0, 0, 0, 0.5);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -35,7 +35,7 @@ const Navigation = () => {
           <p>{wishlist.length}</p>
           <FavoriteIcon style={{ width: 40, height: 40 }} />
         </NavLink>
-        <NavLink className="nav-link cart" to="/cart">
+        <NavLink className="nav-link cart" to="/profile">
           <PersonIcon style={{ width: 40, height: 40 }} />
         </NavLink>
         {authState.isLoggedIn ? (

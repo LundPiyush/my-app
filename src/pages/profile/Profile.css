@@ -1,0 +1,32 @@
+.profile-section {
+  margin: 2rem auto;
+  width: 90%;
+  padding: 2rem 0rem;
+  box-shadow: var(--card-box-shadow);
+}
+.profile-list {
+  display: flex;
+  list-style: none;
+  column-gap: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.profile-list a {
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+.profile-list a:hover {
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+.profile-line {
+  width: 95%;
+  margin: 2rem auto;
+}
+.user-content {
+  margin: 0rem 3rem;
+}
+.user-content .user-info-name,
+.user-info-email {
+  font-size: 1.3rem;
+}

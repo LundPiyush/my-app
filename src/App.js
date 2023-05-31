@@ -9,6 +9,8 @@ import Footer from "./components/Footer/Footer";
 import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
 import Home from "./pages/home/Home";
+import Profile from "./pages/profile/Profile";
+import Address from "./components/Address/Address";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/address" element={<Address />} />
       </Routes>
       <Footer />
     </div>
