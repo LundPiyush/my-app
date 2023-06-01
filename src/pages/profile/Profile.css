@@ -19,6 +19,11 @@
   font-size: 1.4rem;
   text-decoration: underline;
 }
+.profile-list a:active {
+  font-size: 1.4rem;
+  text-decoration: underline;
+  color: var(--primary-color);
+}
 .profile-line {
   width: 95%;
   margin: 2rem auto;

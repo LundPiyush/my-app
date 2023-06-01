@@ -1,11 +1,8 @@
 import React from "react";
 import "./Profile.css";
-import { useAuth } from "../../contexts/authContext";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Profile = () => {
-  const { authState } = useAuth();
-  const { user } = authState;
   return (
     <div className="profile-section">
       <ul className="profile-list">
@@ -20,16 +17,7 @@ const Profile = () => {
         </li>
       </ul>
       <hr className="profile-line" />
-      <div className="user-content">
-        <p className="user-info-name">
-          <strong>Full name : </strong>
-          {user.firstName} {user.lastName}
-        </p>
-        <p className="user-info-email">
-          <strong>Email : </strong>
-          {user.email}
-        </p>
-      </div>
+      <Outlet />
     </div>
   );
 };

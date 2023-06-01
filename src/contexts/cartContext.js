@@ -6,7 +6,6 @@ export const CartContext = createContext(null);
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const token = localStorage.getItem("token");
-  console.log("token", token);
   const priceDetails = cart.reduce(
     (acc, curr) => ({
       quantity: acc.quantity + Number(curr.qty),
@@ -37,8 +36,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const addCartData = async (cartData) => {
-    console.log("cart", cartData);
-    console.log("token", token);
     try {
       const { data, status } = await axios({
         method: "POST",

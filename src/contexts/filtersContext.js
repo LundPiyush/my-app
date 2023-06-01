@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-//import { filterReducer } from "../reducer/filterReducer";
 import { useProducts } from "./productsContext";
 
 const FilterContext = createContext();
@@ -118,7 +117,7 @@ export const FilterProvider = ({ children }) => {
           (product) => product.price <= Number(filters.price_in_range)
         )
       : sortedFilterData;
-  console.log(filters);
+
   return (
     <>
       <FilterContext.Provider

@@ -1,0 +1,44 @@
+.address-section {
+  margin: 0rem 4rem;
+}
+.address-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.address-heading button {
+  height: 2rem;
+  width: 12rem;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+.address-details-line {
+  margin: 0rem;
+  width: 100%;
+}
+.address-list {
+  margin: 1rem 0rem;
+}
+
+.address-details {
+  list-style: none;
+}
+.address-action-btn {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 2rem;
+  margin-bottom: 2rem;
+}
+.address-action-btn .edit-btn {
+  background-color: purple;
+  color: white;
+  height: 2rem;
+  border: 1px solid purple;
+  width: 3.6rem;
+  font-weight: bold;
+  font-size: medium;
+}
+.address-action-btn .delete-btn {
+}

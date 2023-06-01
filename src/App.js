@@ -8,9 +8,9 @@ import SignUp from "./components/SignUp/SignUp";
 import Footer from "./components/Footer/Footer";
 import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
-import Home from "./pages/home/Home";
+import Home from "./pages/profile/home/Home";
 import Profile from "./pages/profile/Profile";
-import Address from "./components/Address/Address";
+import Address from "./pages/profile/address/Address";
 
 function App() {
   return (
@@ -24,8 +24,11 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/address" element={<Address />} />
+        <Route path="/profile" element={<Profile />}>
+          <Route path="" element={<Home />} />
+          <Route path="address" element={<Address />} />
+          <Route path="orders" element={<Home />} />
+        </Route>
       </Routes>
       <Footer />
     </div>

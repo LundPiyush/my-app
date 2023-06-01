@@ -15,5 +15,16 @@ export const users = [
     password: "adarshbalika",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    address: [
+      {
+        _id: uuid(),
+        name: "William St. Avenue",
+        area: "4705 My Drive",
+        city: "Long Island City",
+        state: "New York",
+        pincode: "11101",
+        phoneNumber: "347-402-1133",
+      },
+    ],
   },
 ];
