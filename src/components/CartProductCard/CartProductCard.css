@@ -1,9 +1,10 @@
 .card-product {
+  position: relative;
   display: flex;
   margin: 1rem;
   max-width: 100%;
   padding: 1rem;
-  background-color: lightgray;
+  background-color: var(--light-gray-color);
 }
 
 .card-product img {
@@ -34,11 +35,26 @@
   width: 80%;
 }
 .cart-btn-qty {
-  width: 35%;
-  height: 50%;
+  width: 25%;
+  height: 60%;
+  font-weight: bolder;
+  border: 1px solid var(--dark-color);
 }
 .cart-remove-btn {
   height: 2.5rem;
   width: 80%;
   border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: 1px solid var(--primary-color);
+}
+.cart-remove-btn:hover {
+  scale: 1.1;
+}
+.cart-actions-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

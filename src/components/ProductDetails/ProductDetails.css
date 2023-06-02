@@ -32,8 +32,8 @@
 
 .add-cart {
   width: 90%;
+  background-color: var(--primary-color);
   cursor: pointer;
-  background-color: #1a73e8;
   color: white;
   height: 40px;
   margin-bottom: 1rem;
@@ -44,7 +44,12 @@
   font-weight: 700;
 }
 .add-cart:hover {
-  scale: 1.1;
+  background-color: var(--white-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+.add-cart:focus-visible {
+  outline: var(--primary-color);
 }
 .cart {
   display: flex;
@@ -61,16 +66,15 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-
   margin: 1rem 0rem;
 }
 
 .product-price .product-original-price {
-  color: red;
+  color: var(--original-price-color);
   font-size: 18px;
 }
 .product-price .product-discounted-price {
-  color: green;
+  color: var(--discounted-price-color);
   font-size: 18px;
 }
 .stock {

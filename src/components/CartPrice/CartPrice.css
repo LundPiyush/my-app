@@ -15,10 +15,16 @@
   margin: 0rem 0.5rem;
 }
 .cart-checkout-btn {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: 1px solid var(--primary-color);
   width: 90%;
   padding: 0.5rem 0rem;
   border-radius: 5px;
   font-weight: bolder;
+}
+.cart-checkout-btn:focus-visible {
+  outline: var(--primary-color);
 }
 .cart-total-price-section {
   padding: 1rem 0rem;

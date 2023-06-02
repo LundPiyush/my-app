@@ -10,11 +10,23 @@
 .address-heading button {
   height: 2rem;
   width: 12rem;
+  color: var(--white-color);
+  background-color: var(--primary-color);
   text-align: center;
   font-size: 16px;
   font-weight: bold;
+  border: none;
+  border-radius: 5px;
 }
+.address-heading button:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+  background-color: var(--white-color);
+  border: 1px solid var(--primary-color);
+}
+
 .address-details-line {
+  border: 1px solid var(--primary-color);
   margin: 0rem;
   width: 100%;
 }
@@ -31,14 +43,29 @@
   column-gap: 2rem;
   margin-bottom: 2rem;
 }
-.address-action-btn .edit-btn {
-  background-color: purple;
-  color: white;
-  height: 2rem;
-  border: 1px solid purple;
-  width: 3.6rem;
+
+.address-action-btn .edit-btn,
+.delete-btn {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
   font-weight: bold;
-  font-size: medium;
 }
-.address-action-btn .delete-btn {
+.address-action-btn .edit-btn:hover,
+.delete-btn:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+  background-color: var(--white-color);
+}
+
+.profile-address-modal {
+  background-color: var(--modal-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  inset: 0;
+  position: fixed;
 }

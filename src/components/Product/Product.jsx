@@ -8,6 +8,7 @@ import { useCart } from "../../contexts/cartContext";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useWishlist } from "../../contexts/wishlistContext";
+import { toast } from "react-toastify";
 
 const Product = ({ data }) => {
   const { authState } = useAuth();
@@ -18,13 +19,12 @@ const Product = ({ data }) => {
   const navigate = useNavigate();
 
   const addToWishLisButtontHandler = (product) => {
-    console.log("wishlist product", product);
     if (authState.isLoggedIn && authState.token) {
       addWishlistData(product);
-      //toast.success("Added to wishlist");
+      toast.success(`Added ${product.name} to wishlist`);
     } else {
       navigate("../login");
-      //toast.warning("Please login before adding to wishlist");
+      toast.error("Please login before adding item(s) to wishlist");
     }
   };
   return (
@@ -35,12 +35,13 @@ const Product = ({ data }) => {
             className="wishlist-icon-card"
             onClick={() => {
               removeWishlistData(_id);
+              toast.success(`Removed ${name} from wishlist`);
             }}
           />
         ) : (
           <FavoriteBorderOutlinedIcon
             className="wishlist-icon-card"
-            onClick={(e) => addToWishLisButtontHandler(data)}
+            onClick={() => addToWishLisButtontHandler(data)}
           />
         )}
       </div>
@@ -58,17 +59,22 @@ const Product = ({ data }) => {
       </div>
       <button
         className="btn-cart"
+        disabled={outOfStock}
         onClick={() => {
           if (authState.isLoggedIn) {
             if (isItemInCart(cart, _id)) {
               navigate("/cart");
             } else {
               addCartData(data);
-              //toast.success("Added to cart!");
+              toast.success(`Added ${data.name} to cart! `);
             }
           }
         }}>
-        {outOfStock ? "out of stock" : "add to cart"}
+        {outOfStock
+          ? "out of stock"
+          : isItemInCart(cart, _id)
+          ? "Go to Cart"
+          : "Add to cart"}
       </button>
     </div>
   );

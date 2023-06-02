@@ -18,16 +18,16 @@
 
 .total-cart-price {
   margin: 1rem 0rem;
-  background-color: lightgray;
+  background-color: var(--light-gray-color);
 }
 .no-items-in-cart {
   margin: 0rem auto;
   text-align: center;
 }
 .no-items-in-cart button {
-  background-color: #1a73e8;
+  background-color: var(--primary-color);
   padding: 0rem 1rem;
-  color: white;
+  color: var(--white-color);
   height: 40px;
   border-radius: 5px;
   border: none;

@@ -14,12 +14,4 @@
   display: flex;
   flex-wrap: wrap;
   grid-area: cards;
-  border: 1px solid red;
-}
-.cards h1 {
-  border: 1px solid red;
-}
-.restaurant-cards {
-  text-decoration: none;
-  color: black;
 }

@@ -1,12 +1,33 @@
 import React from "react";
 import "./CartProductCard.css";
 import { useCart } from "../../contexts/cartContext";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useWishlist } from "../../contexts/wishlistContext";
+import { isItemInWishlist } from "../../utils/isItemInWishlist";
 
 const CartProductCard = (product) => {
   const { _id, name, category, discount, price, qty, src } = product;
   const { changeCartQuantity, removeCartData } = useCart();
+  const { wishlist, removeWishlistData, addWishlistData } = useWishlist();
+
   return (
     <div className="card-product">
+      <div className="wishlist-icon">
+        {isItemInWishlist(wishlist, _id) ? (
+          <FavoriteIcon
+            className="wishlist-icon-card"
+            onClick={() => {
+              removeWishlistData(_id);
+            }}
+          />
+        ) : (
+          <FavoriteBorderOutlinedIcon
+            className="wishlist-icon-card"
+            onClick={() => addWishlistData(product)}
+          />
+        )}
+      </div>
       <img src={src} alt={name} />
       <div className="card-product-details">
         <h4 className="card-product-name">{name}</h4>
@@ -31,6 +52,7 @@ const CartProductCard = (product) => {
             +
           </button>
         </div>
+
         <button className="cart-remove-btn" onClick={() => removeCartData(_id)}>
           Remove from Cart
         </button>

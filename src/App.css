@@ -1,9 +1,13 @@
 :root {
-  --primary-color: #000000;
+  --primary-color: #875599;
   --secondary-color: #ffffff;
+  --dark-color: #430a58;
+  --light-gray-color: #e6e6e6;
+  --white-color: #ffffff;
+  --shadow-color: #b9b9b9;
   --original-price-color: red;
   --discounted-price-color: green;
-  --book-card-background-color: black;
+  --card-background-color: black;
   --star-color: yellow;
   --card-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
     rgba(0, 0, 0, 0.23) 0px 3px 6px;

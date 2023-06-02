@@ -1,8 +1,10 @@
 import React from "react";
 import { useCart } from "../../contexts/cartContext";
 import "./CartPrice.css";
+import { useNavigate } from "react-router-dom";
 const CartPrice = () => {
   const { cart } = useCart();
+  const navigate = useNavigate();
   const { priceDetails } = useCart();
   if (cart.length < 1) {
     return null;
@@ -33,7 +35,11 @@ const CartPrice = () => {
           <h4>₹ {priceDetails.totalSubTotal}</h4>
         </div>
         <div className="cart-checkout">
-          <button className="cart-checkout-btn">CHECKOUT</button>
+          <button
+            className="cart-checkout-btn"
+            onClick={() => navigate("/checkout")}>
+            CHECKOUT
+          </button>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@
   border-radius: 10px;
   border: 1px solid;
   white-space: nowrap;
-  background-color: hsla(40, 72%, 50%, 1);
+  background-color: var(--primary-color);
   color: hsla(150, 14%, 97%, 1);
   cursor: pointer;
   outline: none;
@@ -31,6 +31,6 @@
 }
 
 .btn-shop-now:hover {
-  background-color: hsla(40, 72%, 60%, 1);
+  background-color: var(--dark-color);
   transform: translateY(-3px);
 }

@@ -10,9 +10,9 @@
   text-align: center;
 }
 .no-items-in-wishlist button {
-  background-color: #1a73e8;
+  background-color: var(--primary-color);
   padding: 0rem 1rem;
-  color: white;
+  color: var(--white-color);
   height: 40px;
   border-radius: 5px;
   border: none;

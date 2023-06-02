@@ -58,40 +58,42 @@ const ProductDetails = () => {
             {outOfStock ? "Not in Stock" : "In Stock"}
           </p>
           <div className="cart">
-            <button
-              className="add-cart"
-              disabled={outOfStock ? true : false}
-              style={{ backgroundColor: outOfStock ? "#FFFFFF" : "#1a73e8" }}
-              onClick={() => {
-                if (authState.isLoggedIn) {
-                  if (isItemInCart(cart, _id)) {
-                    navigate("/cart");
-                  } else {
-                    addCartData(singleProduct);
-                    //toast.success("Added to cart!");
+            {!outOfStock && (
+              <button
+                className="add-cart"
+                disabled={outOfStock ? true : false}
+                onClick={() => {
+                  if (authState.isLoggedIn) {
+                    if (isItemInCart(cart, _id)) {
+                      navigate("/cart");
+                    } else {
+                      addCartData(singleProduct);
+                      //toast.success("Added to cart!");
+                    }
                   }
-                }
-              }}>
-              {isItemInCart(cart, _id) ? "Go to Cart" : "Add To Cart"}
-            </button>
-            <button
-              className="add-cart"
-              disabled={outOfStock ? true : false}
-              style={{ backgroundColor: outOfStock ? "#FFFFFF" : "#1a73e8" }}
-              onClick={() => {
-                if (authState.isLoggedIn) {
-                  if (isItemInWishlist(wishlist, _id)) {
-                    navigate("/wishlist");
-                  } else {
-                    addWishlistData(singleProduct);
-                    //toast.success("Added to cart!");
+                }}>
+                {isItemInCart(cart, _id) ? "Go to Cart" : "Add To Cart"}
+              </button>
+            )}
+            {!outOfStock && (
+              <button
+                className="add-cart"
+                disabled={outOfStock ? true : false}
+                onClick={() => {
+                  if (authState.isLoggedIn) {
+                    if (isItemInWishlist(wishlist, _id)) {
+                      navigate("/wishlist");
+                    } else {
+                      addWishlistData(singleProduct);
+                      //toast.success("Added to cart!");
+                    }
                   }
-                }
-              }}>
-              {isItemInWishlist(wishlist, _id)
-                ? "Go to Wishlist"
-                : "Add To Wishlist"}
-            </button>
+                }}>
+                {isItemInWishlist(wishlist, _id)
+                  ? "Go to Wishlist"
+                  : "Add To Wishlist"}
+              </button>
+            )}
           </div>
         </div>
       </div>

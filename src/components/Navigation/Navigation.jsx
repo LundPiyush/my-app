@@ -51,6 +51,7 @@ const Navigation = () => {
       <div className="input-search-section">
         <input
           type="text"
+          placeholder="Search products..."
           className="input-search"
           onChange={(e) => handleSearchText(e.target.value)}
         />

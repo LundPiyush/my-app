@@ -28,23 +28,25 @@ const Sidebar = () => {
         <span className="filter-heading">Sort</span>
         <div>
           <input
+            id="sort-price-htl"
             type="radio"
             name="sortPrice"
             value="high_to_low"
             checked={filters.sortBy === "high_to_low"}
             onChange={() => handlePrice("high_to_low")}
           />
-          <label>Price High to Low</label>
+          <label htmlFor="sort-price-htl">Price High to Low</label>
         </div>
         <div>
           <input
+            id="sort-price-lth"
             type="radio"
             name="sortPrice"
             value="low_to_high"
             checked={filters.sortBy === "low_to_high"}
             onChange={() => handlePrice("low_to_high")}
           />
-          <label>Price Low to High </label>
+          <label htmlFor="sort-price-lth">Price Low to High </label>
         </div>
       </div>
       <hr />
