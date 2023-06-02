@@ -3,8 +3,13 @@ import { useAddress } from "../../contexts/addressContext";
 import "./AddressForm.css";
 import AddressModal from "../AddressModal/AddressModal";
 const AddressForm = () => {
-  const { addresses, setShowAddressCard } = useAddress();
-
+  const {
+    addresses,
+    showAddressCard,
+    setShowAddressCard,
+    addressFormData,
+    setAddressFormData,
+  } = useAddress();
   return (
     <div className="address-form-checkout">
       <h3 className="address-checkout-heading">Select Address</h3>
@@ -13,10 +18,14 @@ const AddressForm = () => {
         {addresses.map((address) => {
           const { _id, name, city, state, area, pincode, phoneNumber } =
             address;
-          console.log(name);
           return (
             <div key={_id} className="address-container">
-              <input type="radio" name="address" />
+              <input
+                type="radio"
+                name="address"
+                checked={addressFormData._id === _id}
+                onChange={() => setAddressFormData(address)}
+              />
               <div key={_id} className="address-details">
                 <p>{name}</p>
                 <p>{area}</p>
@@ -31,10 +40,25 @@ const AddressForm = () => {
       </div>
       <button
         className="add-new-address-btn"
-        onClick={() => setShowAddressCard(true)}>
+        onClick={() => {
+          setShowAddressCard(true);
+          setAddressFormData({
+            name: "",
+            area: "",
+            city: "",
+            state: "",
+            pincode: "",
+            phoneNumber: "",
+            _id: "",
+          });
+        }}>
         Add new Address
       </button>
-      {setShowAddressCard && <AddressModal />}
+      {showAddressCard && (
+        <div className="profile-address-modal">
+          <AddressModal />
+        </div>
+      )}
     </div>
   );
 };

@@ -42,3 +42,19 @@
   scale: 1.3;
   color: #ffffff;
 }
+
+@media screen and (max-width: 768px) {
+  .footer {
+    grid-template-areas:
+      "social-icons useful-links"
+      "info info";
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer {
+    grid-template-areas:
+      "useful-links"
+      "social-icons"
+      "info";
+  }
+}

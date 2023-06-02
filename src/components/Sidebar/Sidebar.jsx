@@ -19,7 +19,7 @@ const Sidebar = () => {
       <div className="clear-filter">
         <span className="filter-heading">Filters</span>
         <button className="btn-clear" onClick={() => clearFilters()}>
-          Clear
+          Clear All
         </button>
       </div>
       <hr />
@@ -55,33 +55,36 @@ const Sidebar = () => {
         <span className="filter-heading">Avg. Customer Review</span>
         <div>
           <input
+            id="4-star"
             type="radio"
             name="starRating"
             value="4"
             checked={filters.rating === 4}
             onChange={() => handleRating(4)}
           />
-          <label>4 ⭐️ & above</label>
+          <label htmlFor="4-star">4 ⭐️ & above</label>
         </div>
         <div>
           <input
+            id="3-star"
             type="radio"
             name="starRating"
             value="3"
             checked={filters.rating === 3}
             onChange={() => handleRating(3)}
           />
-          <label>3 ⭐️ & above</label>
+          <label htmlFor="3-star">3 ⭐️ & above</label>
         </div>
         <div>
           <input
+            id="2-star"
             type="radio"
             name="starRating"
             value="2"
             checked={filters.rating === 2}
             onChange={() => handleRating(2)}
           />
-          <label>2 ⭐️ & above</label>
+          <label htmlFor="2-star">2 ⭐️ & above</label>
         </div>
       </div>
       <hr />
@@ -90,48 +93,53 @@ const Sidebar = () => {
         <span className="filter-heading">Discount</span>
         <div>
           <input
+            id="50%"
             type="radio"
             name="discountFilter"
             checked={filters.radio_discount === 50}
             onChange={() => handleDiscount("50")}
           />
-          <label>50% and above</label>
+          <label htmlFor="50%">50% and above</label>
         </div>
         <div>
           <input
+            id="40%"
             type="radio"
             name="discountFilter"
             checked={filters.radio_discount === 40}
             onChange={() => handleDiscount("40")}
           />
-          <label>40% and above</label>
+          <label htmlFor="40%">40% and above</label>
         </div>
         <div>
           <input
+            id="30%"
             type="radio"
             name="discountFilter"
             checked={filters.radio_discount === 30}
             onChange={() => handleDiscount("30")}
           />
-          <label>30% and above</label>
+          <label htmlFor="30%">30% and above</label>
         </div>
         <div>
           <input
+            id="20%"
             type="radio"
             name="discountFilter"
             checked={filters.radio_discount === 20}
             onChange={() => handleDiscount("20")}
           />
-          <label>20% and above</label>
+          <label htmlFor="20%">20% and above</label>
         </div>
         <div>
           <input
+            id="10%"
             type="radio"
             name="discountFilter"
             checked={filters.radio_discount === 10}
             onChange={() => handleDiscount("10")}
           />
-          <label>10% and above</label>
+          <label htmlFor="10%">10% and above</label>
         </div>
       </div>
       {/* Price */}
@@ -161,63 +169,69 @@ const Sidebar = () => {
         <span className="filter-heading">Category</span>
         <div>
           <input
+            id="accessories"
             type="checkbox"
             name="categoryFilter"
             value="accessories"
             checked={filters.checkBox_category.includes("accessories")}
             onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
-          <label>Accessories</label>
+          <label htmlFor="accessories">Accessories</label>
         </div>
         <div>
           <input
+            id="books"
             type="checkbox"
             name="categoryFilter"
             value="books"
             checked={filters.checkBox_category.includes("books")}
             onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
-          <label>Books</label>
+          <label htmlFor="books">Books</label>
         </div>
         <div>
           <input
+            id="lifestyle"
             type="checkbox"
             name="categoryFilter"
             value="lifestyle"
             checked={filters.checkBox_category.includes("lifestyle")}
             onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
-          <label>Lifestyle</label>
+          <label htmlFor="lifestyle">Lifestyle</label>
         </div>
         <div>
           <input
+            id="clothing"
             type="checkbox"
             name="categoryFilter"
             value="clothing"
             checked={filters.checkBox_category.includes("clothing")}
             onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
-          <label>Clothing</label>
+          <label htmlFor="clothing">Clothing</label>
         </div>
         <div>
           <input
+            id="stationery"
             type="checkbox"
             name="categoryFilter"
             value="stationery"
             checked={filters.checkBox_category.includes("stationery")}
             onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
-          <label>Stationery</label>
+          <label htmlFor="stationery">Stationery</label>
         </div>
         <div>
           <input
+            id="wallart"
             type="checkbox"
             name="categoryFilter"
             value="wallart"
             checked={filters.checkBox_category.includes("wallart")}
             onChange={(e) => handleCategoryFilter(e, e.target.value)}
           />
-          <label>Wall Art</label>
+          <label htmlFor="wallart">Wall Art</label>
         </div>
       </div>
       <hr />
@@ -225,12 +239,13 @@ const Sidebar = () => {
         <span className="filter-heading">Availability</span>
         <div>
           <input
+            id="stock"
             type="checkbox"
             name="stock"
             checked={filters.includeOutOfStock}
             onChange={(e) => handleOutOfStock(e)}
           />
-          <label>Include Out of Stock</label>
+          <label htmlFor="stock">Include Out of Stock</label>
         </div>
       </div>
     </div>

@@ -27,7 +27,6 @@
 .card-brand {
   font-size: 1.1rem;
 }
-
 .btn-cart {
   background-color: var(--primary-color);
   color: var(--white-color);
@@ -67,4 +66,8 @@
 
 .wishlist-icon-card {
   color: red;
+}
+.price-discount-container {
+  display: flex;
+  justify-content: space-between;
 }

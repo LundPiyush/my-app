@@ -25,8 +25,11 @@ const Login = () => {
     <div>
       <div className="form">
         <h3>Login</h3>
-        <label className="label">Email:</label>
+        <label htmlFor="email-input" className="label">
+          Email:
+        </label>
         <input
+          id="email-input"
           className="login-input"
           type="email"
           placeholder="johndoe@example.com"
@@ -34,10 +37,14 @@ const Login = () => {
             setUserData((prev) => ({ ...prev, email: e.target.value }))
           }
         />
-        <label className="label">Password:</label>
+        <label htmlFor="password-input" className="label">
+          Password:
+        </label>
         <input
+          id="password-input"
           className="login-input"
           type="password"
+          placeholder="**********"
           onChange={(e) =>
             setUserData((prev) => ({ ...prev, password: e.target.value }))
           }

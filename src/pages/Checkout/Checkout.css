@@ -2,4 +2,29 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.checkout-section .payment-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.payment-button button {
+  flex-grow: 1;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+.payment-button button:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+  background-color: var(--white-color);
+}
+.order-summary-card {
+  padding: 1.5rem 1rem;
+  margin: 1rem 0em;
+  box-shadow: var(--card-box-shadow);
 }

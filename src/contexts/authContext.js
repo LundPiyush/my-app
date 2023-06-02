@@ -21,7 +21,6 @@ export const AuthProvider = ({ children }) => {
         data: userData,
         url: "/api/auth/login",
       });
-      console.log(data);
       if (status === 200) {
         authDispatch({ type: "set_login", payload: true });
         authDispatch({ type: "set_user", payload: data?.foundUser });

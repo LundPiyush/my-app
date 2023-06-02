@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cart } = useCart();
-  console.log(cart);
   const navigate = useNavigate();
   if (cart.length < 1) {
     return (

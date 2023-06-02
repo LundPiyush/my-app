@@ -2,9 +2,9 @@ import React from "react";
 import { useCart } from "../../contexts/cartContext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
 import AddressForm from "../../components/AddressForm/AddressForm";
 import "./Checkout.css";
+import OrderSummary from "../../components/OrderSummary/OrderSummary";
 
 const loadScript = (url) => {
   return new Promise((resolve, reject) => {
@@ -42,9 +42,9 @@ const Checkout = () => {
       description: "Thank you for shopping with us",
       handler: function () {
         toast.success(
-          `Payment of Rs. ${priceDetails.totalSubTotal}  is Succesful`
+          `Payment of Rs.${priceDetails.totalSubTotal} is succesfully done`
         );
-        //navigate("/order-summary");
+        //navigate("/");
         cart.map((item) => removeCartData(item._id));
         setTimeout(() => {
           console.log("Success");
@@ -64,8 +64,11 @@ const Checkout = () => {
       <div>
         <AddressForm />
       </div>
-      <div>
-        <button onClick={() => displayRazorpay()}>Place Order</button>
+      <div className="order-summary-card">
+        <OrderSummary />
+        <div className="payment-button">
+          <button onClick={() => displayRazorpay()}>Place Order</button>
+        </div>
       </div>
     </div>
   );

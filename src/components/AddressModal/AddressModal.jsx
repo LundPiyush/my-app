@@ -45,6 +45,7 @@ const AddressModal = () => {
         onSubmit={(e) => formAddressSubmit(e)}>
         <label className="address-profile-label">
           <input
+            required
             value={addressFormData.name}
             onChange={(e) =>
               setAddressFormData({ ...addressFormData, name: e.target.value })
@@ -55,6 +56,7 @@ const AddressModal = () => {
         </label>
         <label>
           <input
+            required
             value={addressFormData.area}
             onChange={(e) =>
               setAddressFormData({ ...addressFormData, area: e.target.value })
@@ -65,6 +67,7 @@ const AddressModal = () => {
         </label>
         <label>
           <input
+            required
             value={addressFormData.city}
             onChange={(e) =>
               setAddressFormData({ ...addressFormData, city: e.target.value })
@@ -75,6 +78,7 @@ const AddressModal = () => {
         </label>
         <label>
           <input
+            required
             value={addressFormData.state}
             onChange={(e) =>
               setAddressFormData({ ...addressFormData, state: e.target.value })
@@ -85,6 +89,7 @@ const AddressModal = () => {
         </label>
         <label>
           <input
+            required
             value={addressFormData.pincode}
             onChange={(e) =>
               setAddressFormData({
@@ -98,6 +103,7 @@ const AddressModal = () => {
         </label>
         <label>
           <input
+            required
             value={addressFormData.phoneNumber}
             type="text"
             onChange={(e) =>
@@ -112,6 +118,7 @@ const AddressModal = () => {
         <div>
           <button className="btn-save">Save</button>
           <button
+            type="button"
             className="btn-cancel"
             onClick={() => setShowAddressCard(false)}>
             Cancel

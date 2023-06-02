@@ -1,0 +1,72 @@
+.order-summary-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.5rem;
+  padding: 1rem 2rem;
+  padding-top: 0rem;
+  border-radius: 5px;
+}
+.product-summary {
+  display: flex;
+  flex-direction: column;
+}
+.product-summary h3 {
+  color: var(--dark-color);
+  align-self: center;
+}
+.item-qty-heading,
+.item-qty-details {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 5rem;
+}
+.item-qty-heading p {
+  margin-block-start: 0;
+  font-weight: 600;
+}
+.item-qty-details p {
+  max-width: 15rem;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+.quantity-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quantity-summary p {
+  font-weight: 600;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+.price-summary {
+  display: flex;
+  flex-direction: column;
+}
+.price-summary h3 {
+  color: var(--dark-color);
+  align-self: center;
+  margin: 0.8rem;
+}
+.total-price-summmary,
+.total-discount-summmary,
+.sub-total-summmary {
+  display: flex;
+  justify-content: space-between;
+}
+.sub-total-summmary {
+  font-weight: 600;
+}
+.delivery-summary {
+  display: flex;
+  flex-direction: column;
+}
+.delivery-summary h3 {
+  align-self: center;
+  color: var(--dark-color);
+}
+.order-summary-line {
+  width: 105%;
+  margin: 0;
+}

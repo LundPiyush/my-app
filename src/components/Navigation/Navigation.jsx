@@ -16,17 +16,10 @@ const Navigation = () => {
   const { cart } = useCart();
   const { wishlist } = useWishlist();
 
-  /*
-  const handleLogoutClick = () => {
-    navigate("/");
-    userLogout();
-  };
-  */
-
   return (
     <div className="nav-bar">
       <NavLink to="/" className="nav-link-heading logo-name">
-        <h3 className="brand_name">E-commerce</h3>
+        <h3 className="brand_name">Shop Now</h3>
       </NavLink>
       <ul className="nav-actions-list">
         <NavLink className="nav-link cart" to="/cart">
@@ -42,14 +35,10 @@ const Navigation = () => {
           to={authState.isLoggedIn ? "/profile" : "/login"}>
           <PersonIcon style={{ width: 40, height: 40 }} />
         </NavLink>
-        {/* {authState.isLoggedIn ? (
-          <button onClick={handleLogoutClick}>Log Out</button>
-        ) : (
-          <button onClick={() => navigate("/login")}>Log In</button>
-        )} */}
       </ul>
       <div className="input-search-section">
         <input
+          id="search-input"
           type="text"
           placeholder="Search products..."
           className="input-search"

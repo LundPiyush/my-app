@@ -24,7 +24,7 @@ const Product = ({ data }) => {
       toast.success(`Added ${product.name} to wishlist`);
     } else {
       navigate("../login");
-      toast.error("Please login before adding item(s) to wishlist");
+      toast.warning("Please login before adding item(s) to wishlist");
     }
   };
   return (
@@ -53,8 +53,9 @@ const Product = ({ data }) => {
           <s className="card-original-price">₹{price}</s>
           <span className="card-price">{price - (price * discount) / 100}</span>
         </div>
-        <div>
-          <span>{rating} ⭐</span> | <span>{}</span>
+        <div className="price-discount-container">
+          <span>{rating} ⭐</span>
+          <span>{discount}% OFF</span>
         </div>
       </div>
       <button
@@ -68,6 +69,9 @@ const Product = ({ data }) => {
               addCartData(data);
               toast.success(`Added ${data.name} to cart! `);
             }
+          } else {
+            toast.warning(`Please login to proceed!`);
+            navigate("/login");
           }
         }}>
         {outOfStock

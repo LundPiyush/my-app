@@ -22,7 +22,6 @@ export const WishlistProvider = ({ children }) => {
   };
 
   const addWishlistData = async (wishlistData) => {
-    console.log(wishlistData);
     try {
       const { data, status } = await axios({
         method: "POST",
