@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCartSharp";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PersonIcon from "@mui/icons-material/Person";
@@ -10,7 +10,7 @@ import { useCart } from "../../contexts/cartContext";
 import { useWishlist } from "../../contexts/wishlistContext";
 
 const Navigation = () => {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const { authState } = useAuth();
   const { handleSearchText } = useFilters();
   const { cart } = useCart();
@@ -23,11 +23,11 @@ const Navigation = () => {
       </NavLink>
       <ul className="nav-actions-list">
         <NavLink className="nav-link cart" to="/cart">
-          <p>{cart.length}</p>
+          <p>{authState?.token ? cart.length : 0}</p>
           <ShoppingCartIcon style={{ width: 40, height: 40 }} />
         </NavLink>
         <NavLink className="nav-link wishlist" to="/wishlist">
-          <p>{wishlist.length}</p>
+          <p>{authState?.token ? wishlist.length : 0}</p>
           <FavoriteIcon style={{ width: 40, height: 40 }} />
         </NavLink>
         <NavLink
@@ -43,6 +43,7 @@ const Navigation = () => {
           placeholder="Search products..."
           className="input-search"
           onChange={(e) => handleSearchText(e.target.value)}
+          onClick={() => navigate("/products")}
         />
       </div>
     </div>

@@ -10,12 +10,14 @@ import { AuthProvider } from "./contexts/authContext";
 import { WishlistProvider } from "./contexts/wishlistContext";
 import { FilterProvider } from "./contexts/filtersContext";
 import { AddressProvider } from "./contexts/addressContext";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <BrowserRouter>
+    <ScrollToTop />
     <AuthProvider>
       <ProductsProvider>
         <WishlistProvider>

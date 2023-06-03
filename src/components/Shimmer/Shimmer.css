@@ -1,0 +1,20 @@
+.shimer-wrapper {
+  display: flex;
+}
+.products-shimmer-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  width: 300px;
+  height: 450px;
+  margin: 20px;
+  background: var(--light-gray-color);
+}
+.shimmer-card-sidebar {
+  width: 250px;
+  height: 1000px;
+  margin: 20px;
+  background: var(--light-gray-color);
+}

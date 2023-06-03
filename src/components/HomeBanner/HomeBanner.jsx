@@ -1,8 +1,7 @@
 import React from "react";
 import "./HomeBanner.css";
 import { Link } from "react-router-dom";
-import BackgroundImage1 from "../../assets/images/slider_1.jpg";
-//import BackgroundImage2 from "../../assets/images/home.jpg";
+import BackgroundImage1 from "../../assets/images/home-banner.jpg";
 
 function HomeBanner() {
   return (

@@ -30,8 +30,9 @@
 .card-category-title {
   position: absolute;
   top: 50%;
-  left: 30%;
+  left: 20%;
+  text-transform: uppercase;
   color: white;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: bolder;
 }
