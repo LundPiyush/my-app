@@ -7,6 +7,7 @@ import { isItemInCart } from "../../utils/isItemInCart";
 import { useAuth } from "../../contexts/authContext";
 import { isItemInWishlist } from "../../utils/isItemInWishlist";
 import { useWishlist } from "../../contexts/wishlistContext";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const [singleProduct, setSingleProduct] = useState({});
@@ -68,7 +69,7 @@ const ProductDetails = () => {
                       navigate("/cart");
                     } else {
                       addCartData(singleProduct);
-                      //toast.success("Added to cart!");
+                      toast.success("Added to cart!");
                     }
                   }
                 }}>
@@ -85,7 +86,7 @@ const ProductDetails = () => {
                       navigate("/wishlist");
                     } else {
                       addWishlistData(singleProduct);
-                      //toast.success("Added to cart!");
+                      toast.success("Added to wishlist!");
                     }
                   }
                 }}>
@@ -97,9 +98,6 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      {/* <div className="like-product">
-        <Featured />
-      </div> */}
     </>
   );
 };

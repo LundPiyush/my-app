@@ -13,7 +13,7 @@ const Profile = () => {
           <Link to="/profile/address">Address</Link>
         </li>
         <li>
-          <Link>Order summary</Link>
+          <Link to="/profile/orders">Order summary</Link>
         </li>
       </ul>
       <hr className="profile-line" />

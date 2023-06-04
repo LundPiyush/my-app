@@ -15,3 +15,7 @@
   flex-wrap: wrap;
   grid-area: cards;
 }
+.no-products-message {
+  text-align: center;
+  color: var(--primary-color);
+}

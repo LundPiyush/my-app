@@ -17,6 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Checkout from "./pages/Checkout/Checkout";
 import Error from "./pages/error/Error";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
+import Orders from "./pages/profile/orders/Orders";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
           <Route path="/profile" element={<Profile />}>
             <Route path="" element={<HomeProfile />} />
             <Route path="address" element={<Address />} />
-            <Route path="orders" element={<HomeProfile />} />
+            <Route path="orders" element={<Orders />} />
           </Route>
         </Route>
         <Route path="*" element={<Error />} />
