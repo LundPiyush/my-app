@@ -27,7 +27,6 @@ const Checkout = () => {
   const { cart, removeCartData, priceDetails } = useCart();
   const navigate = useNavigate();
   const { addressFormData } = useAddress();
-  console.log(addressFormData);
   const displayRazorpay = async () => {
     const response = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -70,7 +69,16 @@ const Checkout = () => {
       <div className="order-summary-card">
         <OrderSummary />
         <div className="payment-button">
-          <button onClick={() => displayRazorpay()}>Place Order</button>
+          <button
+            onClick={() => {
+              addressFormData?.name.length > 0
+                ? displayRazorpay()
+                : toast.error(
+                    "Please select an address before placing an order"
+                  );
+            }}>
+            Place Order
+          </button>
         </div>
       </div>
     </div>
