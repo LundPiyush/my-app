@@ -26,18 +26,15 @@ const Footer = () => {
         </div>
       </div>
       <div className="info">
-        <h2>Electronic Store</h2>
+        <h2>Shop Now</h2>
         <p>
           Stay in touch with us, get product updates, offers, discounts directly
           to your inbox
         </p>
-        <h3>© 2023 Electronic Store</h3>
+        <h3>© 2023 Shop Now</h3>
       </div>
       <div className="useful-links">
         <h2>Useful Links</h2>
-        <Link className="nav-link" to="/sign-up">
-          Sign-Up
-        </Link>
         <NavLink className="nav-link" to="/cart">
           Cart
         </NavLink>
