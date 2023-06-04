@@ -13,16 +13,7 @@ const AddressModal = () => {
     editAddress,
     addressFormat,
   } = useAddress();
-  const dummyValues = {
-    name: "Ramdev",
-    area: "Golamdain",
-    city: "Mumbai",
-    state: "Maharashthra",
-    pincode: "421003",
-    phoneNumber: "1234567890",
-  };
 
-  //const { name, area, city, state, pincode, phoneNumber } = addressFormData;
   const formAddressSubmit = (e) => {
     e.preventDefault();
     const isAddressPresent = addresses.find(
@@ -115,7 +106,7 @@ const AddressModal = () => {
             placeholder="Phone Number"
           />
         </label>
-        <div>
+        <div className="address-modal-btns">
           <button className="btn-save">Save</button>
           <button
             type="button"
@@ -124,11 +115,6 @@ const AddressModal = () => {
             Cancel
           </button>
         </div>
-        <button
-          className="btn-dummy"
-          onClick={() => setAddressFormData({ ...dummyValues })}>
-          Fill in Dummy Values
-        </button>
       </form>
     </div>
   );

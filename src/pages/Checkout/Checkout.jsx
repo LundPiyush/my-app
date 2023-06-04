@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import AddressForm from "../../components/AddressForm/AddressForm";
 import "./Checkout.css";
 import OrderSummary from "../../components/OrderSummary/OrderSummary";
+import { useAddress } from "../../contexts/addressContext";
 
 const loadScript = (url) => {
   return new Promise((resolve, reject) => {
@@ -25,7 +26,8 @@ const loadScript = (url) => {
 const Checkout = () => {
   const { cart, removeCartData, priceDetails } = useCart();
   const navigate = useNavigate();
-
+  const { addressFormData } = useAddress();
+  console.log(addressFormData);
   const displayRazorpay = async () => {
     const response = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -44,7 +46,7 @@ const Checkout = () => {
         toast.success(
           `Payment of Rs.${priceDetails.totalSubTotal} is succesfully done`
         );
-        //navigate("/");
+        navigate("/");
         cart.map((item) => removeCartData(item._id));
         setTimeout(() => {
           console.log("Success");
@@ -59,6 +61,7 @@ const Checkout = () => {
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
   };
+
   return (
     <div className="checkout-section">
       <div>

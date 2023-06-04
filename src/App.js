@@ -6,7 +6,6 @@ import Navigation from "./components/Navigation/Navigation";
 import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import Footer from "./components/Footer/Footer";
-import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
 import HomeProfile from "./pages/profile/home/HomeProfile";
 import Profile from "./pages/profile/Profile";
@@ -18,12 +17,15 @@ import Checkout from "./pages/Checkout/Checkout";
 import Error from "./pages/error/Error";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 import Orders from "./pages/profile/orders/Orders";
+import { lazy, Suspense } from "react";
+
+const Cart = lazy(() => import("./pages/cart/Cart"));
 
 function App() {
   return (
     <div className="App">
       <Navigation />
-      <ToastContainer position="top-right" autoClose={2000} />
+      <ToastContainer position="top-right" autoClose={1500} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductsList />} />
@@ -31,7 +33,14 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route element={<RequireAuth />}>
-          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/cart"
+            element={
+              <Suspense fallback={<h1>Loading...</h1>}>
+                <Cart />
+              </Suspense>
+            }
+          />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/profile" element={<Profile />}>

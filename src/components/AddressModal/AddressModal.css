@@ -27,3 +27,20 @@
   border-radius: 3px;
   padding-left: 10px;
 }
+.address-modal-btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+.address-modal-btns .btn-cancel,
+.btn-save {
+  color: var(--primary-color);
+  background-color: var(--white-color);
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  padding: 0.5rem;
+}
+.address-modal-btns .btn-cancel:hover,
+.btn-save:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
