@@ -7,6 +7,8 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  border: 0.2px solid var(--primary-color);
+  border-radius: 8px;
 }
 
 .card:hover {
