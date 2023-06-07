@@ -8,6 +8,7 @@ import { useAuth } from "../../contexts/authContext";
 import { useFilters } from "../../contexts/filtersContext";
 import { useCart } from "../../contexts/cartContext";
 import { useWishlist } from "../../contexts/wishlistContext";
+import { debounce } from "lodash";
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -15,6 +16,14 @@ const Navigation = () => {
   const { handleSearchText } = useFilters();
   const { cart } = useCart();
   const { wishlist } = useWishlist();
+
+  const searchText = debounce((value) => {
+    handleSearchText(value);
+  }, 1000);
+
+  const onChangeSearchText = (e) => {
+    searchText(e.target.value);
+  };
 
   return (
     <div className="nav-bar">
@@ -42,7 +51,7 @@ const Navigation = () => {
           type="text"
           placeholder="Search products..."
           className="input-search"
-          onChange={(e) => handleSearchText(e.target.value)}
+          onChange={(e) => onChangeSearchText(e)}
           onClick={() => navigate("/products")}
         />
       </div>
